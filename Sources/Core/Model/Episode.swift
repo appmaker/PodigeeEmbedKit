@@ -10,7 +10,7 @@ import Foundation
 
 /// A list of episodes
 public struct Playlist: Codable {
-    let episodes: Episodes
+    public let episodes: Episodes
 }
 
 public typealias Episodes = [Episode]
