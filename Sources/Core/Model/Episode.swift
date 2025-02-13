@@ -15,13 +15,13 @@ public struct Playlist: Codable {
 
 public typealias Episodes = [Episode]
 public struct Episode: Codable, Identifiable {
-    public let id = UUID()
+    public var id: UUID { UUID() }
     /// All media related to this episode. Contains URLs to different audio formats
     public let media: Media
     /// URL for the coverart image, contains podcast coverart as fallback. Use coverartUrlFor(width:) to request a scaled image.
     public let coverUrl: URL?
     /// The episode title
-    public let title: String
+    public let title: String?
     /// The episode subtitle
     public let subtitle: String?
     /// The episode description
@@ -39,7 +39,7 @@ public struct Episode: Codable, Identifiable {
     
     public struct Chaptermark: Codable {
         /// The chapter mark title
-        public let title: String
+        public let title: String?
         /// The chapter mark start time related to playback time.
         ///
         /// Format: `hh:mm:ss.sss`
